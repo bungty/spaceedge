@@ -11,105 +11,124 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-
 <style>
-/* ===== HEADER ===== */
+    /* ===== TOP HEADER ===== */
 .top-header {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.logo {
+  width: 180px;
 }
 
 .company-name {
   font-size: 18px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  color: #003a8f;
+  letter-spacing: 0.5px;
 }
 
 .tagline {
-  font-size: 12px;
-  color: #1e5db6;
+  font-size: 11px;
+  color: #6b7280;
   letter-spacing: 1px;
-  margin-top: 4px;
+  margin-top: 2px;
+}
+
+.top-links {
+  font-size: 13px;
+  color: #003a8f;
 }
 
 .top-links a {
-  text-decoration: none;
-  color: #1e5db6;
-  font-size: 13px;
-  margin-left: 8px;
+  color: #003a8f;
+  margin-left: 10px;
+  transition: 0.3s;
 }
 
-.logo {
-  width: 200px;
+.top-links a:hover {
+  color: #000;
 }
 
+/* ===== NAVBAR ===== */
 .main-nav {
-  border-top: 1px solid #eee;
+  background: #ffffff;
+  border-top: 1px solid #e6e6e6;
 }
 
 .main-nav .nav-link {
-  color: #1e5db6;
+  color: #003a8f;
   font-weight: 500;
-  padding: 10px 18px;
+  padding: 14px 18px;
+  position: relative;
+}
+
+.main-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #003a8f;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.main-nav .nav-link:hover::after,
+.main-nav .nav-link.active::after {
+  width: 60%;
 }
 
 .main-nav .nav-link.active {
-  background: #1e5db6;
-  color: #fff !important;
+  color: #003a8f;
+  font-weight: 600;
 }
 
-
-
-
-
-/* Dropdown */
+/* ===== DROPDOWN ===== */
 .dropdown-menu {
   border-radius: 0;
-  border: 1px solid #e5e5e5;
-  padding: 10px 0;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .dropdown-item {
   font-size: 14px;
-  color: #1e5db6;
-  padding: 8px 20px;
+  padding: 10px 22px;
+  color: #003a8f;
 }
 
 .dropdown-item:hover {
-  background: #1e5db6;
+  background: #003a8f;
   color: #fff;
 }
 
+    </style>
 
-
-</style>
 </head>
 
 <body>
 
 <!-- ===== TOP HEADER ===== -->
 <div class="top-header">
-  <div class="container">
-    <div class="row align-items-center">
+  <div class="container d-flex justify-content-between align-items-center">
 
-      <div class="col-md-8 d-flex align-items-center">
-        <img src="images/logo.webp" class="logo me-3">
-        <div>
-          <div class="company-name">
-            SPACE EDGE CONSULTANTS
-          </div>
-          <div class="tagline">VALUE | ENGINEERING | COMMITMENT</div>
-        </div>
+    <div class="d-flex align-items-center">
+      <img src="images/logo.webp" class="logo me-3" alt="Space Edge Logo">
+      <div>
+        <div class="company-name">SPACE EDGE CONSULTANTS</div>
+        <div class="tagline">VALUE | ENGINEERING | COMMITMENT</div>
       </div>
-
-      <div class="col-md-4 text-md-end top-links">
-        <!-- <a href="#">EMPLOYEE LOGIN</a> | -->
-        <span>FOLLOW US ON:</span>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-
     </div>
+
+    <div class="top-links">
+      <span class="me-2">FOLLOW US</span>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
   </div>
 </div>
 
@@ -117,20 +136,22 @@
 <nav class="navbar navbar-expand-lg main-nav">
   <div class="container">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#spaceedgeNav" aria-controls="spaceedgeNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#spaceedgeNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="spaceedgeNav">
+    <div class="collapse navbar-collapse justify-content-center" id="spaceedgeNav">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link active" href="#">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="#">COMPANY</a></li>
         <li class="nav-item"><a class="nav-link" href="#">SECTORS</a></li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             SERVICES
           </a>
-          <!-- <ul class="dropdown-menu">
+          <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Planning & Feasibility Studies</a></li>
             <li><a class="dropdown-item" href="#">Detailed Project Preparation</a></li>
             <li><a class="dropdown-item" href="#">Geo-Technical Investigation</a></li>
@@ -139,8 +160,9 @@
             <li><a class="dropdown-item" href="#">Environmental & Social Impact Studies</a></li>
             <li><a class="dropdown-item" href="#">Construction Supervision</a></li>
             <li><a class="dropdown-item" href="#">Project Management</a></li>
-          </ul> -->
+          </ul>
         </li>
+
         <li class="nav-item"><a class="nav-link" href="#">SIGNATURE PROJECTS</a></li>
         <li class="nav-item"><a class="nav-link" href="#">MEDIA</a></li>
         <li class="nav-item"><a class="nav-link" href="#">CAREERS</a></li>
@@ -154,17 +176,32 @@
 
 <!-- ===== VIDEO BANNER ===== -->
 <section class="hero-video">
-  <img src="images/avaition.webp" alt="Banner Image" class="hero-img">
 
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero-bg-video">
+    <source src="images/avaition.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
   <div class="hero-overlay"></div>
 
+  <!-- Content -->
   <div class="hero-content">
-    <h1>
-      SPACE EDGE CONSULTANTS
-    </h1>
+    <h1>SPACE EDGE CONSULTANTS</h1>
+    <p>Engineering Sustainable Infrastructure & Iconic Architecture</p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="btn btn-primary">About Us</a>
+      <a href="#contact" class="btn btn-outline-light">Contact Us</a>
+    </div>
   </div>
 
-  <a href="#about" class="scroll-down">⌄</a>
+  <!-- Scroll Down -->
+  <a href="#about" class="scroll-down">
+    <span></span>
+  </a>
+
 </section>
 
 <style>
@@ -175,121 +212,235 @@
   overflow: hidden;
 }
 
-.hero-video .hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-video .hero-overlay {
+/* Video */
+.hero-bg-video {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4); /* Dark overlay for text readability */
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -2;
 }
 
-.hero-video .hero-content {
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.4)
+  );
+  z-index: -1;
+}
+
+/* Content */
+.hero-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #ffffff;
   text-align: center;
+  color: #ffffff;
   padding: 0 20px;
 }
 
-.hero-video .hero-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
-  .hero-video .hero-content h1 {
-    font-size: 2rem;
-  }
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #e0e0e0;
 }
 
-@media (max-width: 480px) {
-  .hero-video .hero-content h1 {
-    font-size: 1.5rem;
-  }
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
 }
 
-/* Scroll Down Arrow */
+.hero-buttons .btn {
+  padding: 12px 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+  background-color: #1e5db6;
+  border-color: #1e5db6;
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #144d8f;
+}
+
+.hero-buttons .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #1e5db6;
+}
+
+/* Scroll Down */
 .scroll-down {
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem;
-  color: #ffffff;
-  text-decoration: none;
-  animation: bounce 2s infinite;
 }
 
-/* Bounce Animation */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
+.scroll-down span {
+  display: block;
+  width: 25px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
+}
+
+.scroll-down span::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 12px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
   }
-  40% {
-    transform: translateX(-50%) translateY(-10px);
+
+  .hero-content p {
+    font-size: 1rem;
   }
-  60% {
-    transform: translateX(-50%) translateY(-5px);
+
+  .hero-buttons {
+    flex-direction: column;
   }
 }
+
     </style>
+<section class="about-section py-5">
+  <div class="container">
+    <div class="row g-0 align-items-stretch">
 
+      <!-- CONTENT CARD -->
+      <div class="col-lg-6 d-flex">
+        <div class="about-card p-5 my-auto">
 
-<!-- ===== NEXT SECTION ===== -->
-<section class="py-5">
-  <div class="container text-center">
-    <h2 class="section-title">ABOUT US</h2>
-    <p class="about-text mx-auto">
-    SPACE EDGE CONSULTANTS is an ISO 9001:2015 certified multi-disciplinary Architectural Design & Engineering Consultancy firm with main expertise in Architecture, Urban Planning, Master Planning, Site Planning, Engineering and Contract Management. We have also branched out to include Project Feasibility, Planning & Development Studies including Project Management and Environmental Design. 
+          <h6 class="about-subtitle">WHO WE ARE</h6>
+          <h2 class="section-title">ABOUT SPACE EDGE CONSULTANTS</h2>
 
-​
-    </p>
+          <p class="about-text">
+            SPACE EDGE CONSULTANTS is an ISO 9001:2015 certified multi-disciplinary Architectural Design & Engineering Consultancy firm with core expertise in Architecture, Urban Planning, Master Planning, Site Planning, Engineering and Contract Management.
+          </p>
 
-    <p class="about-text mx-auto">
-     Founded in year 2015 by Principal Architect & Urban Planner, Sumit Tripathi, a diverse group that tackles designs with a different approach to every project from basic architectural stages including Conceptual Architectural Design, Schematic Design, Design Development, Contract Development, and Construction Implementation
-    </p>
+          <p class="about-text">
+            Founded in 2015 by Principal Architect & Urban Planner <strong>Sumit Tripathi</strong>, the firm approaches every project with a contextual and research-driven mindset — from conceptual design to construction implementation.
+          </p>
 
-    <p class="about-text mx-auto">
-        Over the years, we have carried out the architecture, master planning, and urban design of Multi-modal Transport Terminals, Retail and Entertainment centers, Commercial, Office, Institutional, Industrial, Residential, and Tourism Estates, and Mixed-Use Development projects of buildings
-        </p>
+          <p class="about-text">
+            Over the years, we have delivered multi-modal transport terminals, commercial and institutional buildings, residential and tourism estates, and large-scale mixed-use developments across India.
+          </p>
 
-        <p class="about-text mx-auto">Space Edge Consultants has been pioneering in providing strategic consultancy services to leading Authorities, Developers, and Contractors.</p>
+          <p class="about-text">
+            We continue to pioneer strategic consultancy services for leading authorities, developers, and contractors.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- IMAGE SIDE -->
+      <div class="col-lg-6 about-image"></div>
+
+    </div>
   </div>
 </section>
 
+
 <style>
+.about-section{
+  background:#f8f9fb;
+}
+
+.about-card{
+  background:#fff;
+  border-left:5px solid #1e5db6;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.about-subtitle{
+  font-size:12px;
+  letter-spacing:3px;
+  color:#777;
+  margin-bottom:10px;
+}
+
 .section-title{
   color:#1e5db6;
   font-weight:600;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
+
 .about-text{
-  max-width:900px;
   color:#1e5db6;
   line-height:1.8;
   font-size:15px;
+  margin-bottom:15px;
+}
+
+/* Right image */
+.about-image{
+  background:url("images/commercial.webp") center center / cover no-repeat;
+  min-height:450px;
+}
+
+/* Mobile */
+@media (max-width: 991px){
+  .about-image{
+    min-height:300px;
+  }
+  .about-card{
+    border-left:none;
+    border-top:5px solid #1e5db6;
+  }
 }
 </style>
+
+
 <section class="py-5 philosophy-section">
   <div class="container">
+
     <div class="row align-items-center">
 
       <!-- LEFT CONTENT -->
       <div class="col-lg-7">
 
-        <div class="mv-item d-flex mb-4">
-          <img src="images/avaition.webp" class="mv-icon">
+        <div class="mv-card mb-4">
+          <div class="mv-icon-wrap">
+            <img src="images/avaition.webp" alt="Mission">
+          </div>
           <div>
             <h6>MISSION</h6>
             <p>
@@ -299,8 +450,10 @@
           </div>
         </div>
 
-        <div class="mv-item d-flex mb-4">
-          <img src="images/commercial.webp" class="mv-icon">
+        <div class="mv-card mb-4">
+          <div class="mv-icon-wrap">
+            <img src="images/commercial.webp" alt="Vision">
+          </div>
           <div>
             <h6>VISION</h6>
             <p>
@@ -310,8 +463,10 @@
           </div>
         </div>
 
-        <div class="mv-item d-flex mb-4">
-          <img src="images/healthcae.webp" class="mv-icon">
+        <div class="mv-card mb-4">
+          <div class="mv-icon-wrap">
+            <img src="images/healthcae.webp" alt="Professionalism">
+          </div>
           <div>
             <h6>PROFESSIONALISM</h6>
             <p>
@@ -325,18 +480,20 @@
 
       <!-- RIGHT IMAGE -->
       <div class="col-lg-5 text-center">
-        <img src="images/avaition.webp" class="philosophy-img">
+        <div class="philosophy-img-wrap">
+          <img src="images/avaition.webp" alt="Philosophy Image">
+        </div>
       </div>
 
     </div>
 
     <!-- PHILOSOPHY TEXT -->
     <div class="row mt-5">
-      <div class="col-lg-8 mx-auto text-center">
-        <h6 class="mt-4">PHILOSOPHY</h6>
+      <div class="col-lg-9 mx-auto text-center">
+        <h6 class="mb-3">PHILOSOPHY</h6>
         <p class="philosophy-text">
           Our ideal is to design in such a reduced form, that the results endure
-          content and time. Formal restrSPACE EDGE CONSULTANTSion and uniformity of materials contribute
+          content and time. Formal restriction and uniformity of materials contribute
           to this standpoint because we understand obviousness as a categorical imperative.
         </p>
       </div>
@@ -344,44 +501,86 @@
 
   </div>
 </section>
+
 <style>
-    .philosophy-section h6 {
-  color: #1e5db6;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
+.philosophy-section{
+  background:#f8f9fc;
 }
 
-.mv-item p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-  text-align:left !important;
+.mv-card{
+  display:flex;
+  gap:20px;
+  padding:20px;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  align-items:flex-start;
+  transition: all 0.3s ease;
 }
 
-.mv-icon {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  margin-right: 20px;
+.mv-card:hover{
+  transform: translateY(-5px);
 }
 
-.philosophy-img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
+.mv-icon-wrap{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#1e5db6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
 }
 
-.philosophy-text {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: auto;
+.mv-icon-wrap img{
+  width:32px;
+  height:32px;
+  filter: brightness(0) invert(1);
 }
 
-    </style>
+.philosophy-section h6{
+  color:#1e5db6;
+  font-weight:600;
+  letter-spacing:1px;
+  margin-bottom:5px;
+}
+
+.mv-card p{
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
+}
+
+.philosophy-img-wrap{
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.philosophy-img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.philosophy-text{
+  font-size:15px;
+  color:#555;
+  line-height:1.8;
+  max-width:750px;
+  margin:auto;
+}
+
+/* Mobile */
+@media(max-width:991px){
+  .philosophy-img-wrap{
+    margin-top:30px;
+  }
+}
+</style>
+
 
 <section class="stats-bar text-white py-5">
   <div class="container">
@@ -389,332 +588,537 @@
 
       <div class="col-md-4">
         <h6>Year</h6>
-        <h1>1987</h1>
+        <h1 class="counter" data-target="1987">0</h1>
         <p>Established</p>
       </div>
 
       <div class="col-md-4">
         <h6>Worked on</h6>
-        <h1>850+</h1>
+        <h1 class="counter" data-target="850">0</h1>
         <p>Projects</p>
       </div>
 
       <div class="col-md-4">
         <h6>USD Billion</h6>
-        <h1>84+</h1>
+        <h1 class="counter" data-target="84">0</h1>
         <p>Value of Projects</p>
       </div>
 
     </div>
   </div>
 </section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+  let started = false;
+
+  function startCounting() {
+    if (started) return;
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      const speed = 200; // lower = faster
+
+      const updateCount = () => {
+        const current = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (current < target) {
+          counter.innerText = current + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target + (target >= 100 ? "+" : "");
+        }
+      };
+
+      updateCount();
+    });
+
+    started = true;
+  }
+
+  window.addEventListener("scroll", () => {
+    const section = document.querySelector(".stats-bar");
+    const sectionTop = section.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight - 100) {
+      startCounting();
+    }
+  });
+});
+</script>
+
+
 
 <style>
 .stats-bar{
-  background:#1e5db6;
+  position: relative;
+  background: url("images/highway.webp") center center / cover no-repeat;
+  color: #fff;
 }
+
+.stats-bar::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 93, 182, 0.85); /* blue overlay */
+  z-index: 1;
+}
+
+.stats-bar .container{
+  position: relative;
+  z-index: 2;
+}
+
+.stats-bar .col-md-4{
+  position: relative;
+}
+
+.stats-bar .col-md-4:not(:last-child)::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(255,255,255,0.35);
+}
+
 .stats-bar h1{
-  font-size:48px;
-  font-weight:700;
+  font-size: 52px;
+  font-weight: 700;
+  margin: 10px 0 5px;
+  letter-spacing: 1px;
 }
+
 .stats-bar h6{
-  font-size:14px;
-  opacity:0.9;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.stats-bar p{
+  margin-top: 5px;
+  font-size: 15px;
+  opacity: 0.95;
+}
+
+/* Mobile */
+@media (max-width: 767px){
+  .stats-bar .col-md-4:not(:last-child)::after{
+    display: none;
+  }
+  .stats-bar h1{
+    font-size: 42px;
+  }
 }
 </style>
+
+
+
 <section class="py-5 text-center" id="sectors">
   <div class="container">
-    <h2 class="section-title mb-4">SECTORS</h2>
+    <h2 class="section-title mb-5">SECTORS</h2>
 
-    <div class="row g-4 mt-4">
-      <div class="col-md-2 col-6">
-        <div class="sector-icon">🛣️</div>
-        <p>Expressways & Highways</p>
+    <div class="row g-4">
+
+      <!-- Sector 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="sector-card">
+          <img src="images/highway.webp" alt="Expressways & Highways" class="img-fluid">
+          <h5 class="sector-name mt-3">Expressways & Highways</h5>
+        </div>
       </div>
-      <div class="col-md-2 col-6">
-        <div class="sector-icon">🚇</div>
-        <p>Tunnels</p>
+
+      <!-- Sector 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="sector-card">
+          <img src="images/Tunnels.avif" alt="Tunnels" class="img-fluid">
+          <h5 class="sector-name mt-3">Tunnels</h5>
+        </div>
       </div>
-      <div class="col-md-2 col-6">
-        <div class="sector-icon">🌉</div>
-        <p>Bridges & Structures</p>
+
+      <!-- Sector 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="sector-card">
+          <img src="images/Bridges & Structures.jpg" alt="Bridges & Structures" class="img-fluid">
+          <h5 class="sector-name mt-3">Bridges & Structures</h5>
+        </div>
       </div>
-      <div class="col-md-2 col-6">
-        <div class="sector-icon">🚆</div>
-        <p>Railways & Metro</p>
+
+      <!-- Sector 4 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="sector-card">
+          <img src="images/longest-railway-tunnels.avif" alt="Railways & Metro" class="img-fluid">
+          <h5 class="sector-name mt-3">Railways & Metro</h5>
+        </div>
       </div>
-      <div class="col-md-2 col-6">
-        <div class="sector-icon">✈️</div>
-        <p>Airports & Aviation</p>
+
+      <!-- Sector 5 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="sector-card">
+          <img src="images/avaition.webp" alt="Airports & Aviation" class="img-fluid">
+          <h5 class="sector-name mt-3">Airports & Aviation</h5>
+        </div>
       </div>
-      <div class="col-md-2 col-6">
-        <div class="sector-icon">🏢</div>
-        <p>Building & Architecture</p>
+
+      <!-- Sector 6 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="sector-card">
+          <img src="images/commercial.webp" alt="Building & Architecture" class="img-fluid">
+          <h5 class="sector-name mt-3">Building & Architecture</h5>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-
 <style>
-./* Sections Titles */
+/* Section Title */
 .section-title {
   font-size: 2rem;
   font-weight: 700;
   color: #1e5db6;
 }
 
-/* Sector Icons */
-.sector-icon {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: #2c63a3;
+/* Sector Card */
+.sector-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sector-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.sector-card h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e5db6;
+}
+
+/* Hover effect */
+.sector-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media(max-width: 991px){
+  .sector-card img {
+    height: 150px;
+  }
+}
+
+@media(max-width: 575px){
+  .sector-card img {
+    height: 120px;
+  }
+}
+</style>
+
+<section class="py-5 services-section" id="services">
+  <div class="overlay"></div> <!-- Blue overlay for readability -->
+
+  <div class="container position-relative">
+    <h2 class="section-title text-white text-center mb-4">OUR EXPERTISE</h2>
+    <p class="section-subtitle text-center mb-5">
+      At SPACE EDGE CONSULTANTS, we not only increase creativity and sustainability in our designs, 
+      but also enhance collaboration and provide the Client with an ultimate tool to operate and maintain.
+    </p>
+
+    <div class="row g-4">
+
+      <!-- Service Card 1 -->
+      <div class="col-lg-6 col-md-12">
+        <div class="service-card">
+          <ul class="services-list">
+            <li>Technical and Economic Feasibility Assessments</li>
+            <li>Preliminary & Detailed Engineering Design</li>
+            <li>Master Planning, Urban Planning and Design</li>
+            <li>Architectural Planning & Design</li>
+            <li>Systems and Structural Engineering</li>
+            <li>MEPF Services Design and Engineering</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="col-lg-6 col-md-12">
+        <div class="service-card">
+          <ul class="services-list">
+            <li>Funding, Financial Planning & Advisory Services</li>
+            <li>Viability Assessment, Operations Planning & Simulations</li>
+            <li>Delivery process strategy and oversight</li>
+            <li>Development & review of Standards & Specifications Criteria</li>
+            <li>Operations and Maintenance Consulting</li>
+            <li>Sustainability and Resilience Planning & Assessment</li>
+            <li>Environmental & Social Impact Assessment</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.services-section{
+  position: relative;
+  background: url("images/highway.webp") center center / cover no-repeat;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 36px;
-  margin: 0 auto 10px;
-  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.sector-icon:hover {
-  transform: scale(1.1);
-  background: #1e5db6;
+.services-section .overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(30,93,182,0.75); /* semi-transparent blue overlay */
+  z-index: 1;
 }
 
-/* Sector Paragraphs */
-#sectors p {
-  font-size: 0.95rem;
-  color: #333;
-  margin-bottom: 0;
+.services-section .container{
+  position: relative;
+  z-index: 2;
 }
 
-/* Services List */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: #e0e0e0;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
 .services-list {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .services-list li {
   position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
-  font-size: 0.95rem;
-  color: #333;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.6;
 }
 
 .services-list li::before {
   content: "✔";
   position: absolute;
   left: 0;
-  color: #1e5db6;
+  top: 2px;
+  color: #fff;
   font-weight: bold;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .sector-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
+/* Responsive */
+@media(max-width: 991px){
+  .service-card {
+    padding: 25px;
+  }
+  .services-list li {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 480px) {
-  .sector-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
+@media(max-width: 575px){
+  .services-list li {
+    font-size: 13px;
   }
 }
-
 </style>
 
-<section class="py-5 bg-light" id="services">
-  <div class="container">
-    <h2 class="section-title text-center mb-4">OUR EXPERTISE</h2>
-    <p class="text-center mb-5">
-      At SPACE EDGE CONSULTANTS, we not only increase creativity and sustainability in our designs 
-      but also enhance collaboration and provide the Client with an ultimate tool to operate and maintain.
-    </p>
 
-    <div class="row g-3">
-      <div class="col-md-6">
-        <ul class="services-list">
-          <li>Technical and Economic Feasibility Assessments</li>
-          <li>Preliminary & Detailed Engineering Design</li>
-          <li>Master Planning, Urban Planning and Design</li>
-          <li>Architectural Planning & Design</li>
-          <li>Systems and Structural Engineering</li>
-          <li>MEPF Services Design and Engineering</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul class="services-list">
-          <li>Funding, Financial Planning & Advisory Services</li>
-          <li>Viability Assessment, Operations Planning & Simulations</li>
-          <li>Delivery process strategy and oversight</li>
-          <li>Development & review of Standards & Specifications Criteria</li>
-          <li>Operations and Maintenance Consulting</li>
-          <li>Sustainability and Resilience Planning & Assessment</li>
-          <li>Environmental & Social Impact Assessment</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-5 text-center">
+<section class="py-5" id="services">
   <div class="container">
-    <h2 class="section-title mb-5">SERVICES</h2>
+    <h2 class="section-title text-center mb-5">OUR SERVICES</h2>
 
     <div class="row g-4 justify-content-center">
-      <div class="col-6 col-md-2 d-flex flex-column align-items-center">
-        <div class="service-icon-circle" style="background-color: #FF6B6B;">
-          <i class="fas fa-train"></i>
+
+      <!-- Service 1 -->
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <div class="service-img">
+          <img src="images/longest-railway-tunnels.avif" alt="Railways & Metro Systems" class="img-fluid">
         </div>
-        <p>RAILWAYS & METRO SYSTEMS</p>
+        <p class="service-name mt-3">RAILWAYS & METRO SYSTEMS</p>
       </div>
 
-      <div class="col-6 col-md-2 d-flex flex-column align-items-center">
-        <div class="service-icon-circle" style="background-color: #4ECDC4;">
-          <i class="fas fa-plane"></i>
+      <!-- Service 2 -->
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <div class="service-img">
+          <img src="images/avaition.webp" alt="Aviation & Airports" class="img-fluid">
         </div>
-        <p>AVIATION & AIRPORTS</p>
+        <p class="service-name mt-3">AVIATION & AIRPORTS</p>
       </div>
 
-      <div class="col-6 col-md-2 d-flex flex-column align-items-center">
-        <div class="service-icon-circle" style="background-color: #FFD93D;">
-          <i class="fas fa-road"></i>
+      <!-- Service 3 -->
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <div class="service-img">
+          <img src="images/highway.webp" alt="Highways & Expressways" class="img-fluid">
         </div>
-        <p>HIGHWAYS & EXPRESSWAYS</p>
+        <p class="service-name mt-3">HIGHWAYS & EXPRESSWAYS</p>
       </div>
 
-      <div class="col-6 col-md-2 d-flex flex-column align-items-center">
-        <div class="service-icon-circle" style="background-color: #1A535C;">
-          <i class="fas fa-building"></i>
+      <!-- Service 4 -->
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <div class="service-img">
+          <img src="images/commercial.webp" alt="Commercial & Institutional" class="img-fluid">
         </div>
-        <p>COMMERCIAL & INSTITUTIONAL</p>
+        <p class="service-name mt-3">COMMERCIAL & INSTITUTIONAL</p>
       </div>
 
-      <div class="col-6 col-md-2 d-flex flex-column align-items-center">
-        <div class="service-icon-circle" style="background-color: #FF6B6B;">
-          <i class="fas fa-hotel"></i>
+      <!-- Service 5 -->
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <div class="service-img">
+          <img src="images/hotesl.webp" alt="Hotels & Hospitality" class="img-fluid">
         </div>
-        <p>HOTELS & HOSPITALITY</p>
+        <p class="service-name mt-3">HOTELS & HOSPITALITY</p>
       </div>
 
-      <div class="col-6 col-md-2 d-flex flex-column align-items-center">
-        <div class="service-icon-circle" style="background-color: #4ECDC4;">
-          <i class="fas fa-hospital"></i>
+      <!-- Service 6 -->
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+        <div class="service-img">
+          <img src="images/healthcae.webp" alt="Healthcare & Hospitals" class="img-fluid">
         </div>
-        <p>HEALTHCARE & HOSPITALS</p>
+        <p class="service-name mt-3">HEALTHCARE & HOSPITALS</p>
       </div>
+
     </div>
   </div>
 </section>
-
-
-
-
 
 
 
 <style>
-
-.service-icon-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;          
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  margin-bottom: 10px;
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e5db6;
 }
 
-.service-icon-circle i {
-  font-size: 30px;
-  color: white;                
+.service-img {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.service-icon-circle:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  opacity: 0.9;
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-.row p {
-  margin-top: 5px;
+.service-img:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.service-name {
+  font-size: 0.9rem;
   font-weight: 500;
   text-align: center;
-  font-size: 0.85rem;
+  color: #1e5db6;
+  margin-top: 8px;
 }
 
+/* Responsive adjustments */
+@media(max-width: 991px){
+  .service-img {
+    width: 100px;
+    height: 100px;
+  }
+}
 
-
-
-
+@media(max-width: 575px){
+  .service-img {
+    width: 80px;
+    height: 80px;
+  }
+  .service-name {
+    font-size: 0.85rem;
+  }
+}
 </style>
-<section class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="section-title">OUR PROJECTS</h2>
+
+<section class="py-5 projects-section" id="projects">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">OUR PROJECTS</h2>
 
     <!-- Tabs -->
-    <ul class="nav nav-tabs justify-content-center mb-4">
-      <li class="nav-item">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#complete">
-          Complete Projects
-        </button>
+    <ul class="nav nav-tabs justify-content-center mb-5" id="projectTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="complete-tab" data-bs-toggle="tab" data-bs-target="#complete" type="button" role="tab">Complete Projects</button>
       </li>
-      <li class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ongoing">
-          Ongoing Projects
-        </button>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ongoing-tab" data-bs-toggle="tab" data-bs-target="#ongoing" type="button" role="tab">Ongoing Projects</button>
       </li>
     </ul>
 
     <div class="tab-content">
 
       <!-- COMPLETE -->
-      <div class="tab-pane fade show active" id="complete">
-        <div class="row g-3 popup-gallery">
+      <div class="tab-pane fade show active" id="complete" role="tabpanel">
+        <div class="row g-4">
 
-          <div class="col-md-3 col-6">
+          <div class="col-lg-3 col-md-6 col-12">
             <div class="project-card">
-              <a href="images/avaition.webp">
-                <img src="images/avaition.webp" class="img-fluid">
-                <div class="project-name">Airport Infrastructure</div>
-              </a>
+              <img src="images/avaition.webp" alt="Airport Infrastructure" class="img-fluid">
+              <div class="project-name">Airport Infrastructure</div>
             </div>
           </div>
 
-          <div class="col-md-3 col-6">
+          <div class="col-lg-3 col-md-6 col-12">
             <div class="project-card">
-              <a href="images/avaition.webp">
-                <img src="images/avaition.webp" class="img-fluid">
-                <div class="project-name">Metro Rail Project</div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6">
-            <div class="project-card">
-              <a href="images/avaition.webp">
-                <img src="images/avaition.webp" class="img-fluid">
-                <div class="project-name">Airport Infrastructure</div>
-              </a>
+              <img src="images/avaition.webp" alt="Metro Rail Project" class="img-fluid">
+              <div class="project-name">Metro Rail Project</div>
             </div>
           </div>
 
-          <div class="col-md-3 col-6">
+          <div class="col-lg-3 col-md-6 col-12">
             <div class="project-card">
-              <a href="images/avaition.webp">
-                <img src="images/avaition.webp" class="img-fluid">
-                <div class="project-name">Metro Rail Project</div>
-              </a>
+              <img src="images/avaition.webp" alt="Commercial Complex" class="img-fluid">
+              <div class="project-name">Commercial Complex</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="project-card">
+              <img src="images/avaition.webp" alt="Urban Development" class="img-fluid">
+              <div class="project-name">Urban Development</div>
             </div>
           </div>
 
@@ -722,43 +1126,34 @@
       </div>
 
       <!-- ONGOING -->
-      <div class="tab-pane fade" id="ongoing">
-        <div class="row g-3 popup-gallery">
+      <div class="tab-pane fade" id="ongoing" role="tabpanel">
+        <div class="row g-4">
 
-          <div class="col-md-3 col-6">
+           <div class="col-lg-3 col-md-6 col-12">
             <div class="project-card">
-              <a href="images/healthcae.webp">
-                <img src="images/healthcae.webp" class="img-fluid">
-                <div class="project-name">Healthcare Complex</div>
-              </a>
+              <img src="images/avaition.webp" alt="Urban Development" class="img-fluid">
+              <div class="project-name">Urban Development</div>
             </div>
           </div>
-           <div class="col-md-3 col-6">
+ <div class="col-lg-3 col-md-6 col-12">
             <div class="project-card">
-              <a href="images/healthcae.webp">
-                <img src="images/healthcae.webp" class="img-fluid">
-                <div class="project-name">Healthcare Complex</div>
-              </a>
+              <img src="images/avaition.webp" alt="Urban Development" class="img-fluid">
+              <div class="project-name">Urban Development</div>
+            </div>
+          </div>
+ <div class="col-lg-3 col-md-6 col-12">
+            <div class="project-card">
+              <img src="images/avaition.webp" alt="Urban Development" class="img-fluid">
+              <div class="project-name">Urban Development</div>
+            </div>
+          </div>
+ <div class="col-lg-3 col-md-6 col-12">
+            <div class="project-card">
+              <img src="images/avaition.webp" alt="Urban Development" class="img-fluid">
+              <div class="project-name">Urban Development</div>
             </div>
           </div>
 
-           <div class="col-md-3 col-6">
-            <div class="project-card">
-              <a href="images/healthcae.webp">
-                <img src="images/healthcae.webp" class="img-fluid">
-                <div class="project-name">Healthcare Complex</div>
-              </a>
-            </div>
-          </div>
-
-           <div class="col-md-3 col-6">
-            <div class="project-card">
-              <a href="images/healthcae.webp">
-                <img src="images/healthcae.webp" class="img-fluid">
-                <div class="project-name">Healthcare Complex</div>
-              </a>
-            </div>
-          </div>
 
         </div>
       </div>
@@ -767,12 +1162,37 @@
   </div>
 </section>
 <style>
-    .project-card {
+.projects-section {
+  background: #f8f9fb;
+}
+
+/* Tabs */
+.nav-tabs .nav-link {
+  font-weight: 600;
+  color: #1e5db6;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid #1e5db6;
+  color: #1e5db6;
+}
+
+/* Project Card */
+.project-card {
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 
@@ -780,19 +1200,42 @@
   transform: scale(1.1);
 }
 
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
+
 /* Project Name Overlay */
 .project-name {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0,0,0,0.65);
+  background: rgba(30, 93, 182, 0.85);
   color: #fff;
   font-size: 14px;
   padding: 8px;
   text-align: center;
+  transition: background 0.3s;
 }
 
-    </style>
+.project-card:hover .project-name {
+  background: rgba(30, 93, 182, 1);
+}
+
+/* Responsive */
+@media(max-width: 991px){
+  .project-card img {
+    height: 180px;
+  }
+}
+
+@media(max-width: 575px){
+  .project-card img {
+    height: 150px;
+  }
+}
+</style>
+
    
 
 
@@ -887,94 +1330,78 @@
     </style>
 <section class="py-5 bg-light" id="contact">
   <div class="container">
-    <h2 class="section-title text-center mb-4">Contact Us</h2>
+    <h2 class="section-title text-center mb-5">Contact Us</h2>
 
     <div class="row g-4">
-      <!-- Addresses -->
-      <div class="col-md-6">
-  <div class="card p-4 h-100 office-info-card">
+      <!-- Office Info -->
+      <div class="col-lg-5">
+        <div class="office-info-card p-4 h-100">
 
-    <!-- Corporate Office -->
-    <div class="office-block">
-      <h5>Corporate Office</h5>
-      <p>
-        C 152, 1st Floor, Sector 17,<br>
-        Dwarka, New Delhi, 110075,<br>
-        INDIA
-      </p>
-    </div>
+          <!-- Corporate Office -->
+          <div class="office-block mb-4">
+            <h5><i class="bi bi-building"></i> Corporate Office</h5>
+            <p>
+              C 152, 1st Floor, Sector 17,<br>
+              Dwarka, New Delhi, 110075,<br>
+              INDIA
+            </p>
+          </div>
 
-    <!-- Mumbai Office -->
-    <div class="office-block">
-      <h5>Mumbai Office</h5>
-      <p>
-        2251, Kohinoor City, Kurla (W),<br>
-        Mumbai, Maharashtra, 400070,<br>
-        INDIA
-      </p>
-    </div>
+          <!-- Mumbai Office -->
+          <div class="office-block mb-4">
+            <h5><i class="bi bi-building"></i> Mumbai Office</h5>
+            <p>
+              2251, Kohinoor City, Kurla (W),<br>
+              Mumbai, Maharashtra, 400070,<br>
+              INDIA
+            </p>
+          </div>
 
-    <!-- Main Company Address -->
-    <div class="office-block">
-      <h5>SPACE EDGE CONSULTANTS</h5>
-      <p>C 152, Sector 17, Dwarka, India</p>
-    </div>
-
-    <!-- Working Hours -->
-    <div class="office-block">
-      <h5>Hours</h5>
-      <table class="office-hours">
-        <tr><td>Mon</td><td>10:00 am – 06:00 pm</td></tr>
-        <tr><td>Tue</td><td>10:00 am – 06:00 pm</td></tr>
-        <tr><td>Wed</td><td>10:00 am – 06:00 pm</td></tr>
-        <tr><td>Thu</td><td>10:00 am – 06:00 pm</td></tr>
-        <tr><td>Fri</td><td>10:00 am – 06:00 pm</td></tr>
-        <tr><td>Sat</td><td>10:00 am – 06:00 pm</td></tr>
-        <tr><td>Sun</td><td>Closed</td></tr>
-      </table>
-    </div>
-
-  </div>
-</div>
-
+          <!-- Hours -->
+          <div class="office-block">
+            <h5><i class="bi bi-clock"></i> Working Hours</h5>
+            <ul class="office-hours list-unstyled mb-0">
+              <li>Mon – Sat: 10:00 am – 06:00 pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <!-- Contact Form -->
-      <div class="col-md-6">
-        <div class="card p-3 h-100">
-          <h5>Get in Touch</h5>
+      <div class="col-lg-7">
+        <div class="card p-4 h-100 shadow-sm">
+          <h5 class="mb-4">Get in Touch</h5>
           <form id="contactForm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-            </div>
-            <div class="mb-3">
-              <label for="subject" class="form-label">Subject</label>
+            <div class="mt-3">
               <input type="text" class="form-control" id="subject" placeholder="Subject" required>
             </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+            <div class="mt-3">
+              <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            <div class="mt-4 d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
           </form>
         </div>
       </div>
     </div>
 
     <!-- Google Map -->
-    <div class="row mt-4">
+    <div class="row mt-5">
       <div class="col-12">
-        <div class="ratio ratio-16x9">
+        <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.959128625054!2d77.033955!3d28.586112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04d2342a1f23%3A0x6a1b1d17758e0a3f!2sSector%2017%2C%20Dwarka%2C%20New%20Delhi%2C%20Delhi%20110075!5e0!3m2!1sen!2sin!4v1706382450000!5m2!1sen!2sin" 
-            width="600" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
+            allowfullscreen 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
@@ -985,127 +1412,60 @@
 </section>
 
 <style>
-    /* Contact Section Styles */
+/* General Styles */
+#contact {
+  background-color: #f5f7fa;
+  color: #1e5db6;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#contact .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e5db6;
+}
+
+/* Office Info Card */
 .office-info-card {
   background: #ffffff;
   border-radius: 15px;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .office-info-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
 .office-info-card h5 {
   font-weight: 600;
   color: #1e5db6;
-  margin-bottom: 8px;
-}
-
-.office-info-card p {
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-}
-
-.office-hours {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.office-hours td {
-  padding: 4px 10px;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.office-hours tr:nth-child(odd) td {
-  background-color: #f8f9fa;
-}
-
-.office-block + .office-block {
-  margin-top: 20px;
-}
-
-    
-#contact {
-  background-color: #f8f9fa; /* Light background */
-  color: #1e5db6; /* Text color */
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-#contact .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #1e5db6;
-}
-
-#contact p {
-  color: #555;
-  font-size: 1rem;
-}
-
-/* Cards */
-#contact .card {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 20px;
-  background-color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#contact .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-#contact .card h5 {
-  font-weight: 600;
   margin-bottom: 10px;
-  color: #1e5db6;
+  font-size: 1.1rem;
 }
 
-#contact .card p {
+.office-info-card p, 
+.office-info-card ul li {
+  color: #555;
+  line-height: 1.6;
   font-size: 0.95rem;
-  color: #333;
-  text-align: left;
-  margin-bottom: 0.5rem;
 }
 
-/* Google Map */
-#contact iframe {
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  border: 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Contact Form Styles */
-#contact .form-label {
-  font-weight: 600;
-  color: #1e5db6;
-}
-
+/* Contact Form */
 #contact .form-control {
   border-radius: 8px;
   border: 1px solid #ccc;
-  padding: 10px 12px;
+  padding: 12px;
   font-size: 0.95rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contact .form-control:focus {
   border-color: #1e5db6;
-  box-shadow: 0 0 5px rgba(30, 93, 182, 0.3);
-  outline: none;
+  box-shadow: 0 0 8px rgba(30, 93, 182, 0.3);
 }
 
 #contact .btn-primary {
@@ -1120,52 +1480,43 @@
   transform: translateY(-2px);
 }
 
-/* Card hover remains same */
-#contact .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+/* Map Styling */
+#contact iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #contact .card {
-    margin-bottom: 20px;
+/* Responsive */
+@media (max-width: 992px) {
+  #contact .office-info-card, #contact .card {
+    margin-bottom: 30px;
   }
 }
 
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  #contact .card {
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   #contact .section-title {
-    font-size: 1.5rem;
-  }
-  #contact p {
-    font-size: 0.9rem;
+    font-size: 1.8rem;
   }
 }
+</style>
 
-    </style>
 <!-- ===== FOOTER ===== -->
-<footer class="SPACE EDGE CONSULTANTS-footer pt-5">
+<footer class="footer pt-5">
   <div class="container">
-    <div class="row">
+    <div class="row gy-4">
 
       <!-- ABOUT -->
-      <div class="col-md-4 mb-4">
+      <div class="col-lg-4 col-md-6">
         <h6 class="footer-title">ABOUT SPACE EDGE CONSULTANTS</h6>
         <p class="footer-text">
-         SPACE EDGE CONSULTANTS is an ISO 9001:2015 certified multi-disciplinary Architectural Design & Engineering Consultancy firm with main expertise in Architecture, Urban Planning, Master Planning, Site Planning, Engineering and Contract Management. We have also branched out to include Project Feasibility, Planning & Development Studies including Project Management and Environmental Design.
+          SPACE EDGE CONSULTANTS is an ISO 9001:2015 certified multi-disciplinary Architectural Design & Engineering Consultancy firm. Our expertise includes Architecture, Urban Planning, Master Planning, Site Planning, Engineering, and Contract Management. We also provide Project Feasibility, Planning & Development Studies, Project Management, and Environmental Design.
         </p>
       </div>
 
       <!-- QUICK LINKS -->
-      <div class="col-md-2 mb-4">
+      <div class="col-lg-2 col-md-6">
         <h6 class="footer-title">QUICK LINKS</h6>
         <ul class="footer-links">
           <li><a href="#">Home</a></li>
@@ -1178,7 +1529,7 @@
       </div>
 
       <!-- SECTORS -->
-      <div class="col-md-3 mb-4">
+      <div class="col-lg-3 col-md-6">
         <h6 class="footer-title">SECTORS</h6>
         <ul class="footer-links">
           <li><a href="#">Expressways & Highways</a></li>
@@ -1191,24 +1542,28 @@
       </div>
 
       <!-- CONTACT -->
-      <div class="col-md-3 mb-4">
+      <div class="col-lg-3 col-md-6">
         <h6 class="footer-title">CONTACT</h6>
-        <p class="footer-text">
+        <p class="footer-text mb-2">
           <strong>Corporate Office:</strong><br>
           C 152, 1st Floor, Sector 17,<br>
-          Dwarka, New Delhi – 110075, INDIA<br><br>
-
+          Dwarka, New Delhi – 110075, INDIA
+        </p>
+        <p class="footer-text mb-2">
           <strong>Mumbai Office:</strong><br>
           2251, Kohinoor City, Kurla (W),<br>
-          Mumbai, Maharashtra – 400070, INDIA<br><br>
-
+          Mumbai, Maharashtra – 400070, INDIA
+        </p>
+        <p class="footer-text mb-2">
           📞 +91-11-40863000<br>
-          ✉️ business@spaceedgeconsultants.com
+          ✉️ <a href="mailto:business@spaceedgeconsultants.com">business@spaceedgeconsultants.com</a>
         </p>
 
-        <div class="footer-social">
+        <div class="footer-social mt-2">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
@@ -1216,26 +1571,30 @@
   </div>
 
   <!-- BOTTOM BAR -->
-  <div class="footer-bottom text-center mt-4 py-3">
+  <div class="footer-bottom text-center mt-5 py-3">
     © 2025 SPACE EDGE CONSULTANTS. All Rights Reserved.
   </div>
 </footer>
 
 <style>
-    .SPACE EDGE CONSULTANTS-footer {
-  background: #f8f9fb;
-  color: #1e5db6;
+/* Footer Styles */
+.footer {
+  background-color: #1e1e2d;
+  color: #cfd3da;
   font-size: 14px;
+  line-height: 1.7;
 }
 
 .footer-title {
-  font-weight: 600;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 15px;
+  font-size: 1rem;
 }
 
 .footer-text {
-  line-height: 1.7;
-  text-align: left !important;
+  color: #cfd3da;
+  font-size: 0.95rem;
 }
 
 .footer-links {
@@ -1249,27 +1608,47 @@
 
 .footer-links a {
   text-decoration: none;
-  color: #1e5db6;
+  color: #cfd3da;
+  transition: color 0.3s;
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+  color: #1e5db6;
 }
 
 .footer-social a {
   display: inline-block;
   margin-right: 10px;
-  color: #1e5db6;
+  color: #cfd3da;
   font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
 }
 
+.footer-social a:hover {
+  color: #1e5db6;
+  transform: translateY(-3px);
+}
+
+/* Bottom Bar */
 .footer-bottom {
-  background: #1e5db6;
+  background-color: #1e5db6;
   color: #fff;
   font-size: 13px;
 }
 
-    </style>
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer .col-md-6 {
+    margin-bottom: 20px;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+}
+</style>
 
 
 
