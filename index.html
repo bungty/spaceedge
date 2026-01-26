@@ -828,34 +828,82 @@
 
 
     </style>
-
-    <section class="py-5 bg-light" id="contact">
+<section class="py-5 bg-light" id="contact">
   <div class="container">
     <h2 class="section-title text-center mb-4">Contact Us</h2>
-  
 
     <div class="row g-4">
       <!-- Addresses -->
       <div class="col-md-6">
-        <div class="card p-3 h-100">
-          <h5>Corporate Office</h5>
-          <p>C 152, 1st Floor, Sector 17,<br>
-             Dwarka, New Delhi, 110075,<br>
-             INDIA</p>
-          <h5>Mumbai Office</h5>
-          <p>2251, Kohinoor City, Kurla (W),<br>
-             Mumbai, Maharashtra, 400070,<br>
-             INDIA</p>
-        </div>
-      </div>
+  <div class="card p-4 h-100 office-info-card">
 
-      <!-- Hours -->
+    <!-- Corporate Office -->
+    <div class="office-block">
+      <h5>Corporate Office</h5>
+      <p>
+        C 152, 1st Floor, Sector 17,<br>
+        Dwarka, New Delhi, 110075,<br>
+        INDIA
+      </p>
+    </div>
+
+    <!-- Mumbai Office -->
+    <div class="office-block">
+      <h5>Mumbai Office</h5>
+      <p>
+        2251, Kohinoor City, Kurla (W),<br>
+        Mumbai, Maharashtra, 400070,<br>
+        INDIA
+      </p>
+    </div>
+
+    <!-- Main Company Address -->
+    <div class="office-block">
+      <h5>SPACE EDGE CONSULTANTS</h5>
+      <p>C 152, Sector 17, Dwarka, India</p>
+    </div>
+
+    <!-- Working Hours -->
+    <div class="office-block">
+      <h5>Hours</h5>
+      <table class="office-hours">
+        <tr><td>Mon</td><td>10:00 am – 06:00 pm</td></tr>
+        <tr><td>Tue</td><td>10:00 am – 06:00 pm</td></tr>
+        <tr><td>Wed</td><td>10:00 am – 06:00 pm</td></tr>
+        <tr><td>Thu</td><td>10:00 am – 06:00 pm</td></tr>
+        <tr><td>Fri</td><td>10:00 am – 06:00 pm</td></tr>
+        <tr><td>Sat</td><td>10:00 am – 06:00 pm</td></tr>
+        <tr><td>Sun</td><td>Closed</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+
+      <!-- Contact Form -->
       <div class="col-md-6">
         <div class="card p-3 h-100">
-          <h5>SPACE EDGE CONSULTANTS</h5>
-          <p>C 152, Sector 17, Dwarka, India</p>
-          <h5>Hours</h5>
-          <p>Open today: 10:00 am – 06:00 pm</p>
+          <h5>Get in Touch</h5>
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
         </div>
       </div>
     </div>
@@ -878,8 +926,55 @@
     </div>
   </div>
 </section>
+
 <style>
     /* Contact Section Styles */
+.office-info-card {
+  background: #ffffff;
+  border-radius: 15px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.office-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.office-info-card h5 {
+  font-weight: 600;
+  color: #1e5db6;
+  margin-bottom: 8px;
+}
+
+.office-info-card p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.office-hours {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.office-hours td {
+  padding: 4px 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.office-hours tr:nth-child(odd) td {
+  background-color: #f8f9fa;
+}
+
+.office-block + .office-block {
+  margin-top: 20px;
+}
+
+    
 #contact {
   background-color: #f8f9fa; /* Light background */
   color: #1e5db6; /* Text color */
@@ -922,6 +1017,7 @@
 #contact .card p {
   font-size: 0.95rem;
   color: #333;
+  text-align: left;
   margin-bottom: 0.5rem;
 }
 
@@ -934,6 +1030,52 @@
   border: 0;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+/* Contact Form Styles */
+#contact .form-label {
+  font-weight: 600;
+  color: #1e5db6;
+}
+
+#contact .form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .form-control:focus {
+  border-color: #1e5db6;
+  box-shadow: 0 0 5px rgba(30, 93, 182, 0.3);
+  outline: none;
+}
+
+#contact .btn-primary {
+  background-color: #1e5db6;
+  border-color: #1e5db6;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contact .btn-primary:hover {
+  background-color: #144d8f;
+  transform: translateY(-2px);
+}
+
+/* Card hover remains same */
+#contact .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #contact .card {
+    margin-bottom: 20px;
+  }
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
