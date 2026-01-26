@@ -662,48 +662,138 @@
   <div class="container text-center">
     <h2 class="section-title">OUR PROJECTS</h2>
 
-    <!-- Tabs nav -->
-    <ul class="nav nav-tabs justify-content-center mb-4" id="projectTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="complete-tab" data-bs-toggle="tab" data-bs-target="#complete" type="button" role="tab" aria-controls="complete" aria-selected="true">
+    <!-- Tabs -->
+    <ul class="nav nav-tabs justify-content-center mb-4">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#complete">
           Complete Projects
         </button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="ongoing-tab" data-bs-toggle="tab" data-bs-target="#ongoing" type="button" role="tab" aria-controls="ongoing" aria-selected="false">
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ongoing">
           Ongoing Projects
         </button>
       </li>
     </ul>
 
-    <!-- Tabs content -->
-    <div class="tab-content" id="projectTabsContent">
-      <!-- Complete Projects -->
-      <div class="tab-pane fade show active" id="complete" role="tabpanel" aria-labelledby="complete-tab">
-        <div class="row g-2">
-          <div class="col"><img src="images/avaition.webp" class="img-fluid"></div>
-            <div class="col"><img src="images/avaition.webp" class="img-fluid"></div>
-              <div class="col"><img src="images/avaition.webp" class="img-fluid"></div>
-                <div class="col"><img src="images/avaition.webp" class="img-fluid"></div>
-                  <div class="col"><img src="images/avaition.webp" class="img-fluid"></div>
-         
+    <div class="tab-content">
+
+      <!-- COMPLETE -->
+      <div class="tab-pane fade show active" id="complete">
+        <div class="row g-3 popup-gallery">
+
+          <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/avaition.webp">
+                <img src="images/avaition.webp" class="img-fluid">
+                <div class="project-name">Airport Infrastructure</div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/avaition.webp">
+                <img src="images/avaition.webp" class="img-fluid">
+                <div class="project-name">Metro Rail Project</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/avaition.webp">
+                <img src="images/avaition.webp" class="img-fluid">
+                <div class="project-name">Airport Infrastructure</div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/avaition.webp">
+                <img src="images/avaition.webp" class="img-fluid">
+                <div class="project-name">Metro Rail Project</div>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Ongoing Projects -->
-      <div class="tab-pane fade" id="ongoing" role="tabpanel" aria-labelledby="ongoing-tab">
-        <div class="row g-2">
-          <div class="col"><img src="images/healthcae.webp" class="img-fluid"></div>
-          <div class="col"><img src="images/healthcae.webp" class="img-fluid"></div>
-          <div class="col"><img src="images/healthcae.webp" class="img-fluid"></div>
-          <div class="col"><img src="images/healthcae.webp" class="img-fluid"></div>
-          <div class="col"><img src="images/healthcae.webp" class="img-fluid"></div>
-          
+      <!-- ONGOING -->
+      <div class="tab-pane fade" id="ongoing">
+        <div class="row g-3 popup-gallery">
+
+          <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/healthcae.webp">
+                <img src="images/healthcae.webp" class="img-fluid">
+                <div class="project-name">Healthcare Complex</div>
+              </a>
+            </div>
+          </div>
+           <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/healthcae.webp">
+                <img src="images/healthcae.webp" class="img-fluid">
+                <div class="project-name">Healthcare Complex</div>
+              </a>
+            </div>
+          </div>
+
+           <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/healthcae.webp">
+                <img src="images/healthcae.webp" class="img-fluid">
+                <div class="project-name">Healthcare Complex</div>
+              </a>
+            </div>
+          </div>
+
+           <div class="col-md-3 col-6">
+            <div class="project-card">
+              <a href="images/healthcae.webp">
+                <img src="images/healthcae.webp" class="img-fluid">
+                <div class="project-name">Healthcare Complex</div>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
+<style>
+    .project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card img {
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Project Name Overlay */
+.project-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 14px;
+  padding: 8px;
+  text-align: center;
+}
+
+    </style>
+   
+
 
 
 <section class="py-5 text-center">
@@ -1181,7 +1271,16 @@
     </style>
 
 
+
+<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+
+<!-- Magnific Popup JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1199,6 +1298,22 @@ $(document).ready(function(){
       0:{ items:1 },
       576:{ items:2 },
       992:{ items:3 }
+    }
+  });
+});
+</script>
+
+ <script>
+$(document).ready(function () {
+  $('.popup-gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+      enabled: true
+    },
+    zoom: {
+      enabled: true,
+      duration: 300
     }
   });
 });
