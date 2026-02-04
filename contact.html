@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SPACE EDGE CONSULTANTS</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<style>
+    /* ===== TOP BAR ===== */
+.top-bar {
+  background: #003a8f;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+.top-contact span {
+  margin-right: 15px;
+}
+
+.top-contact i {
+  margin-right: 6px;
+}
+
+.top-social a {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.top-social a:hover {
+  opacity: 0.8;
+}
+
+/* ===== NAVBAR ===== */
+.main-nav {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-logo {
+  width: 180px;
+}
+
+.navbar-nav .nav-link {
+  color: #003a8f;
+  font-weight: 500;
+  padding: 14px 16px;
+  position: relative;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #003a8f;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #003a8f;
+  left: 50%;
+  bottom: 8px;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 60%;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+  background: #003a8f;
+  color: #fff;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .top-bar {
+    text-align: center;
+  }
+
+  .top-contact {
+    margin-bottom: 5px;
+  }
+
+  .nav-logo {
+    width: 150px;
+  }
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ===== TOP HEADER ===== -->
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+    <div class="top-contact">
+      <span><i class="fas fa-phone"></i> +91 98765 43210</span>
+      <span><i class="fas fa-envelope"></i> info@spaceedge.com</span>
+    </div>
+
+    <div class="top-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg main-nav">
+  <div class="container">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="images/logo.webp" class="nav-logo" alt="Space Edge">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#spaceedgeNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse justify-content-end" id="spaceedgeNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="company.html">COMPANY</a></li>
+        <li class="nav-item"><a class="nav-link" href="sectors.html">SECTORS</a></li>
+         <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            SERVICES
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Planning & Feasibility</a></li>
+            <li><a class="dropdown-item" href="#">Project Preparation</a></li>
+            <li><a class="dropdown-item" href="#">Construction Supervision</a></li>
+            <li><a class="dropdown-item" href="#">Project Management</a></li>
+          </ul>
+        </li> -->
+
+        <li class="nav-item"><a class="nav-link" href="projects.html">PROJECTS</a></li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">CAREERS</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<section class="py-5 bg-light" id="contact">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Contact Us</h2>
+
+    <div class="row g-4">
+      <!-- Office Info -->
+      <div class="col-lg-5">
+        <div class="office-info-card p-4 h-100">
+
+          <!-- Corporate Office -->
+          <div class="office-block mb-4">
+            <h5><i class="bi bi-building"></i> Corporate Office</h5>
+            <p>
+              C 152, 1st Floor, Sector 17,<br>
+              Dwarka, New Delhi, 110075,<br>
+              INDIA
+            </p>
+          </div>
+
+          <!-- Mumbai Office -->
+          <div class="office-block mb-4">
+            <h5><i class="bi bi-building"></i> Mumbai Office</h5>
+            <p>
+              2251, Kohinoor City, Kurla (W),<br>
+              Mumbai, Maharashtra, 400070,<br>
+              INDIA
+            </p>
+          </div>
+
+          <!-- Hours -->
+          <div class="office-block">
+            <h5><i class="bi bi-clock"></i> Working Hours</h5>
+            <ul class="office-hours list-unstyled mb-0">
+              <li>Mon – Sat: 10:00 am – 06:00 pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <div class="card p-4 h-100 shadow-sm">
+          <h5 class="mb-4">Get in Touch</h5>
+          <form id="contactForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="mt-3">
+              <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="mt-3">
+              <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="mt-4 d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.959128625054!2d77.033955!3d28.586112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04d2342a1f23%3A0x6a1b1d17758e0a3f!2sSector%2017%2C%20Dwarka%2C%20New%20Delhi%2C%20Delhi%20110075!5e0!3m2!1sen!2sin!4v1706382450000!5m2!1sen!2sin" 
+            allowfullscreen 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* General Styles */
+#contact {
+  background-color: #f5f7fa;
+  color: #1e5db6;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#contact .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e5db6;
+}
+
+/* Office Info Card */
+.office-info-card {
+  background: #ffffff;
+  border-radius: 15px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.office-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.office-info-card h5 {
+  font-weight: 600;
+  color: #1e5db6;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.office-info-card p, 
+.office-info-card ul li {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Contact Form */
+#contact .form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .form-control:focus {
+  border-color: #1e5db6;
+  box-shadow: 0 0 8px rgba(30, 93, 182, 0.3);
+}
+
+#contact .btn-primary {
+  background-color: #1e5db6;
+  border-color: #1e5db6;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contact .btn-primary:hover {
+  background-color: #144d8f;
+  transform: translateY(-2px);
+}
+
+/* Map Styling */
+#contact iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  #contact .office-info-card, #contact .card {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  #contact .section-title {
+    font-size: 1.8rem;
+  }
+}
+</style>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer pt-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- ABOUT -->
+      <div class="col-lg-4 col-md-6">
+        <h6 class="footer-title">ABOUT SPACE EDGE CONSULTANTS</h6>
+        <p class="footer-text">
+          SPACE EDGE CONSULTANTS is an ISO 9001:2015 certified multi-disciplinary Architectural Design & Engineering Consultancy firm. Our expertise includes Architecture, Urban Planning, Master Planning, Site Planning, Engineering, and Contract Management. We also provide Project Feasibility, Planning & Development Studies, Project Management, and Environmental Design.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="col-lg-2 col-md-6">
+        <h6 class="footer-title">QUICK LINKS</h6>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Sectors</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SECTORS -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-title">SECTORS</h6>
+        <ul class="footer-links">
+          <li><a href="#">Expressways & Highways</a></li>
+          <li><a href="#">Tunnels</a></li>
+          <li><a href="#">Bridges & Structures</a></li>
+          <li><a href="#">Railways & Metro</a></li>
+          <li><a href="#">Airports & Aviation</a></li>
+          <li><a href="#">Buildings & Architecture</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-title">CONTACT</h6>
+        <p class="footer-text mb-2">
+          <strong>Corporate Office:</strong><br>
+          C 152, 1st Floor, Sector 17,<br>
+          Dwarka, New Delhi – 110075, INDIA
+        </p>
+        <p class="footer-text mb-2">
+          <strong>Mumbai Office:</strong><br>
+          2251, Kohinoor City, Kurla (W),<br>
+          Mumbai, Maharashtra – 400070, INDIA
+        </p>
+        <p class="footer-text mb-2">
+          📞 +91-11-40863000<br>
+          ✉️ <a href="mailto:business@spaceedgeconsultants.com">business@spaceedgeconsultants.com</a>
+        </p>
+
+        <div class="footer-social mt-2">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom text-center mt-5 py-3">
+    © 2025 SPACE EDGE CONSULTANTS. All Rights Reserved.
+  </div>
+</footer>
+
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #1e1e2d;
+  color: #cfd3da;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-title {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.footer-text {
+  color: #cfd3da;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #cfd3da;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #1e5db6;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #cfd3da;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social a:hover {
+  color: #1e5db6;
+  transform: translateY(-3px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  background-color: #1e5db6;
+  color: #fff;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer .col-md-6 {
+    margin-bottom: 20px;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+}
+</style>
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+
+<!-- Magnific Popup JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $(".leadership-carousel").owlCarousel({
+    loop:true,
+    margin:20,
+    nav:true,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:4000,
+    responsive:{
+      0:{ items:1 },
+      576:{ items:2 },
+      992:{ items:3 }
+    }
+  });
+});
+</script>
+
+ <script>
+$(document).ready(function () {
+  $('.popup-gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+      enabled: true
+    },
+    zoom: {
+      enabled: true,
+      duration: 300
+    }
+  });
+});
+</script>
+
+</body>
+</html>
